@@ -70,14 +70,25 @@
         display: flex;
         align-items: center;
         gap: 10px;
+        flex-wrap: wrap;
       }
       .instructions .key {
         background: #e94560;
         padding: 5px 12px;
         border-radius: 5px;
         font-weight: bold;
-        min-width: 80px;
+        min-width: 60px;
         text-align: center;
+      }
+      @media (max-width: 480px) {
+        .instructions {
+          padding: 15px;
+        }
+        .instructions .key {
+          min-width: 50px;
+          padding: 5px 8px;
+          font-size: 0.9rem;
+        }
       }
       .game-container-wrapper {
         display: flex;
@@ -2468,7 +2479,9 @@
         <li>
           <span class="key">SPACE</span> or <span class="key">↑</span> - Jump
         </li>
-        <li><span class="key">Click</span> - Tap to jump on mobile</li>
+        <li style="flex-wrap: nowrap">
+          <span class="key">Click</span> - Tap to jump on mobile
+        </li>
       </ul>
       <p style="margin-top: 15px; color: #a2d2ff">
         💡 Avoid obstacles to score high!
