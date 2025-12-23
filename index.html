@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dino Game - Play with Actors</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(
+          135deg,
+          #1a1a2e 0%,
+          #16213e 50%,
+          #0f3460 100%
+        );
+        min-height: 100vh;
+        padding: 20px;
+        color: #fff;
+      }
+      .header {
+        text-align: center;
+        padding: 40px 20px;
+        margin-bottom: 40px;
+      }
+      .header h1 {
+        font-size: 3rem;
+        color: #e94560;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        margin-bottom: 10px;
+      }
+      .header p {
+        font-size: 1.2rem;
+        color: #a2d2ff;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 30px;
+        padding: 20px;
+      }
+      .card {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        overflow: hidden;
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .card:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 20px 40px rgba(233, 69, 96, 0.3);
+      }
+      .card-image {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        background: linear-gradient(45deg, #e94560, #0f3460);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 4rem;
+        color: rgba(255, 255, 255, 0.5);
+      }
+      .card-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .card-content {
+        padding: 20px;
+      }
+      .card-content h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        color: #fff;
+      }
+      .card-content p {
+        color: #a2d2ff;
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
+      .play-btn {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 10px 25px;
+        background: #e94560;
+        color: #fff;
+        border-radius: 25px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background 0.3s ease;
+      }
+      .play-btn:hover {
+        background: #ff6b6b;
+      }
+      .footer {
+        text-align: center;
+        padding: 40px 20px;
+        margin-top: 40px;
+        color: #a2d2ff;
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <h1>🦖 Dino Game</h1>
+      <p>Play Dino with your favorite actors</p>
+    </header>
+    <main class="container">
+      <div class="card" onclick="location.href='game.html?actor=yash'">
+        <div class="card-image">
+          <img src="images/yash.jpg" alt="Yash" />
+        </div>
+        <div class="card-content">
+          <h3>Yash</h3>
+          <p>Famous movie star</p>
+          <span class="play-btn">Play ▶</span>
+        </div>
+      </div>
+      <div class="card" onclick="location.href='game.html?actor=darshan'">
+        <div class="card-image">
+          <img src="images/darshan.jpg" alt="Darshan" />
+        </div>
+        <div class="card-content">
+          <h3>Darshan</h3>
+          <p>Famous movie star</p>
+          <span class="play-btn">Play ▶</span>
+        </div>
+      </div>
+      <div class="card" onclick="location.href='game.html?actor=ambareesh'">
+        <div class="card-image">
+          <img src="images/ambareesh.jpg" alt="Ambareesh" />
+        </div>
+        <div class="card-content">
+          <h3>Ambareesh</h3>
+          <p>Famous movie star</p>
+          <span class="play-btn">Play ▶</span>
+        </div>
+      </div>
+      <div class="card" onclick="location.href='game.html?actor=saikumar'">
+        <div class="card-image">
+          <img src="images/saikumar.jpeg" alt="Saikumar" />
+        </div>
+        <div class="card-content">
+          <h3>Saikumar</h3>
+          <p>Famous movie star</p>
+          <span class="play-btn">Play ▶</span>
+        </div>
+      </div>
+      <div class="card" onclick="location.href='game.html?actor=danish'">
+        <div class="card-image">
+          <img src="images/danish.jpg" alt="Danish" />
+        </div>
+        <div class="card-content">
+          <h3>Danish</h3>
+          <p>Famous movie star</p>
+          <span class="play-btn">Play ▶</span>
+        </div>
+      </div>
+      <div class="card" onclick="location.href='game.html?actor=huchavenkat'">
+        <div class="card-image">
+          <img src="images/huchavenkat.jpg" alt="Huchavenkat" />
+        </div>
+        <div class="card-content">
+          <h3>Huchavenkat</h3>
+          <p>Famous movie star</p>
+          <span class="play-btn">Play ▶</span>
+        </div>
+      </div>
+    </main>
+    <script>
+      document.querySelectorAll(".card-image img").forEach((img) => {
+        img.onerror = function () {
+          this.style.display = "none";
+          this.parentElement.innerHTML = "🎬";
+        };
+      });
+    </script>
+  </body>
+</html>
