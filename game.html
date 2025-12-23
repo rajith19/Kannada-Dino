@@ -533,7 +533,6 @@
                 }
                 if (!this.tRex.jumping) {
                   this.playCustomSound("JUMP"); // Play custom jump sound
-                  this.playSound(this.soundFx.BUTTON_PRESS);
                   this.tRex.startJump();
                 }
               }
@@ -583,7 +582,6 @@
           },
           gameOver: function () {
             this.playCustomSound("GAME_OVER"); // Play custom game over sound
-            this.playSound(this.soundFx.HIT);
             vibrate(200);
             this.stop();
             this.crashed = true;
